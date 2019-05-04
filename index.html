@@ -63,9 +63,10 @@ p {line-height: 2}
 <!-- Header / Home-->
 <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
   <div class="w3-display-middle w3-text-white w3-center firstImg">
-    <h1 style="font-size: 5vw">Melanie & Austin</h1>
-    <h2 style="font-size: 3vw">Are getting married</h2>
-    <h2 style="font-size: 2vw"><b>Fall 2020</b></h2>
+    <h1 style="font-size: 4vw">Melanie & Austin</h1>
+    <h2 style="font-size: 2vw">Are getting married</h2>
+    <p id="demo" style="font-size: 1vw"></p>
+
   </div>
 </header>
 
@@ -177,7 +178,29 @@ p {line-height: 2}
 <footer class="w3-center w3-black w3-padding-16">
   <p>Built by Melanie and Austin, mostly Melanie </p>
 </footer>
-<div class="w3-hide-small" style="margin-bottom:32px"> </div>
 
+<script>
+var countDownDate = new Date("Oct 18, 2020 00:00:00").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "THEY'RE MARRIED!";
+  }
+}, 1000);
+</script>
 </body>
 </html>
