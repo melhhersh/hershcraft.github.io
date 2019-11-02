@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-<title>Melanie & Austin are getting married!</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="apple-touch-icon" sizes="180x180" href="pics/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="pics/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="pics/favicon-16x16.png">
-<link rel="manifest" href="pics/site.webmanifest">
-<style>
-body,h1,h2{font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-p {line-height: 2}
-.bgimg {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-}
-.bgimg2, .bgimg3 {
-  height: 400px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.bgimg {background-image: url("pics/london.jpg")}
-.bgimg2 {background-image: url("pics/dance2.jpg")}
-.bgimg3 {background-image: url("pics/mountain.jpg")}
-.firstImg{
-    padding: 20px;
-    box-shadow: 0 0 8px 8px rgba(34,34,34,.75);
-    background: rgb(34,34,34);
-    background: rgba(34,34,34,0.75)}
-
-
-
-@media only screen and (max-width: 1100px) {
-    .bgimg,
-    .bgimg2,
-    .bgimg3 {
-        min-height: 250px;
-        background-attachment: initial;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-    .bgimg,
-    .bgimg2,
-    .bgimg3 {
-        min-height: 250px;
-        background-attachment: local;
+  <head>
+    <title>Melanie & Austin are getting married!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="apple-touch-icon" sizes="180x180" href="pics/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="pics/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon-16x16.png">
+    <link rel="manifest" href="pics/site.webmanifest">
+    <style>
+    body,h1,h2{font-family: "Raleway", sans-serif}
+    body, html {height: 100%}
+    p {line-height: 2}
+    .bgimg {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
     }
-}
-</style>
+    .bgimg2, .bgimg3 {
+      height: 400px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
-<style>
-  .center-flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
-</head>
+    .bgimg {background-image: url("pics/london.jpg")}
+    .bgimg2 {background-image: url("pics/dance2.jpg")}
+    .bgimg3 {background-image: url("pics/mountain.jpg")}
+    .firstImg{
+        padding: 20px;
+        box-shadow: 0 0 8px 8px rgba(34,34,34,.75);
+        background: rgb(34,34,34);
+        background: rgba(34,34,34,0.75)}
+
+
+
+    @media only screen and (max-width: 1100px) {
+        .bgimg,
+        .bgimg2,
+        .bgimg3 {
+            min-height: 250px;
+            background-attachment: initial;
+      }
+    }
+
+    @media only screen and (max-width: 750px) {
+        .bgimg,
+        .bgimg2,
+        .bgimg3 {
+            min-height: 250px;
+            background-attachment: local;
+        }
+    }
+    </style>
+
+    <style>
+      .center-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
 <body>
 
 <!-- Header / Home-->
@@ -132,7 +132,7 @@ p {line-height: 2}
       <div class="w3-half">
         <h2>Where</h2>
         <p>The Roundhouse</p>
-        <p>Beacon, New York</p>
+        <p><a href="https://roundhousebeacon.com/">Beacon, New York</a></p>
       </div>
       <p><i>Travel and accommodation details to come.</i></p>
     </div>
@@ -188,27 +188,27 @@ p {line-height: 2}
 </footer>
 
 <script>
-var countDownDate = new Date("Oct 18, 2020 00:00:00").getTime();
+  var countDownDate = new Date("Oct 18, 2020 00:00:00").getTime();
 
-var x = setInterval(function() {
+  var x = setInterval(function() {
 
-  var now = new Date().getTime();
+    var now = new Date().getTime();
 
-  var distance = countDownDate - now;
+    var distance = countDownDate - now;
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "THEY'RE MARRIED!";
-  }
-}, 1000);
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "THEY'RE MARRIED!";
+    }
+  }, 1000);
 </script>
 </body>
 </html>

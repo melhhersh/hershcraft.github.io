@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Melanie & Austin are getting married!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="apple-touch-icon" sizes="180x180" href="pics/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="pics/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon-16x16.png">
+    <link rel="manifest" href="pics/site.webmanifest">
+    <style>
+        body,h1,h2{font-family: "Raleway", sans-serif}
+        body, html {height: 100%}
+        p {line-height: 2}
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+        .bgimg2, .bgimg3 {
+            height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bgimg {background-image: url("pics/london.jpg")}
+        .bgimg2 {background-image: url("pics/dance2.jpg")}
+        .bgimg3 {background-image: url("pics/mountain.jpg")}
+        .firstImg{
+            padding: 20px;
+            box-shadow: 0 0 8px 8px rgba(34,34,34,.75);
+            background: rgb(34,34,34);
+            background: rgba(34,34,34,0.75)}
+
+
+
+        @media only screen and (max-width: 1100px) {
+            .bgimg,
+            .bgimg2,
+            .bgimg3 {
+                min-height: 250px;
+                background-attachment: initial;
+            }
+        }
+
+        @media only screen and (max-width: 750px) {
+            .bgimg,
+            .bgimg2,
+            .bgimg3 {
+                min-height: 250px;
+                background-attachment: local;
+            }
+        }
+    </style>
+
+    <style>
+        .center-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header / Home-->
+<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+    <div class="w3-display-middle w3-text-white w3-center firstImg">
+        <h1 style="font-size: 4vw">Melanie & Austin</h1>
+        <h2 style="font-size: 2vw">Are getting married...in Italy!</h2>
+        <p id="demo" style="font-size: 1vw"></p>
+    </div>
+</header>
+
+<!-- Navbar (sticky bottom) -->
+<div class="w3-bottom w3-hide-small">
+    <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+        <a href="#home" style="width:25%" class="w3-bar-item w3-button">Home</a>
+        <a href="#us" style="width:25%" class="w3-bar-item w3-button">Our Story</a>
+        <a href="#wedding" style="width:25%" class="w3-bar-item w3-button">Wedding</a>
+        <a href="#registry" style="width:25%" class="w3-bar-item w3-button">Registry</a>
+        <!-- <a href="#rsvp" style="width:20%" class="w3-bar-item w3-button w3-hover-black">RSVP</a> -->
+    </div>
+</div>
+
+<!-- About / Melanie And Austin -->
+<div class="w3-container w3-padding-64 w3-pale-red" id="us">
+    <div class="w3-content w3-center">
+        <h1 class="w3-center w3-text-grey"><b>Why Italy?</b></h1>
+        <img class="w3-round w3-center" src="pics/engagement.jpg" style="width:50%; height: 50%;margin:32px 0">
+        <p>
+            <i>
+               So we've gotten this question a lot and believe it warrants a little explanation. While studying abroad in London, we spent a week traveling across
+                Italy, seeing the sights and tasting all the amazing cuisine. We fell in love with the country and wanted to come back (with a little more money). When our friends got married, we found some of the best moments were when we all were hanging out before the ceremony even began. It was this inspiration that led us to this trip. Italy will
+                be a chance for our closest friends and family to come together and celebrate with us. We wont need to panic about spending a small amount of time with everyone, but instead
+                focus on those who matter most to us....whilst in the beautiful Italian country side.
+            </i>
+        </p><br>
+    </div>
+</div>
+
+<!-- Background photo -->
+<div class="w3-display-container w3-grayscale-min bgimg2">
+</div>
+
+<!-- Wedding information -->
+<div class="w3-container w3-padding-64 w3-pale-red w3-center" id="wedding">
+
+    <div class="w3-content">
+        <h1 class="w3-text-grey"><b>THE WEDDING</b></h1>
+        <a href="http://relaislacerreta.com/en/"><img class="w3-round-large" src="http://relaislacerreta.com/wp-content/uploads/2014/06/VillaCerreta1450-003615704201411.jpg" style="width:100%;margin:64px 0"></a>
+        <div class="w3-row">
+            <div class="w3-half">
+                <h2>When</h2>
+                <p>September 12, 2020</p>
+            </div>
+            <div class="w3-half">
+                <h2>Where</h2>
+                <p>Relais La Cerreta</p>
+                <p><a href="http://relaislacerreta.com/en/">Umbria, Italy</a></p>
+            </div>
+        </div>
+        <div class="w3-row">
+            <h2 class="w3-text-grey"><b>ACCOMMODATIONS</b></h2>
+            <p>The bridal party will the be staying at the villas at Relais La Cerreta. As it gets closer to the date we will post some additional accommodations in the area.</p>
+            <p>The area is a 2 hour train ride from Rome, with the region roughly in the middle between Florence and Rome.</p>
+        </div>
+</div>
+
+<!-- Background photo -->
+<div class="w3-display-container w3-grayscale-min bgimg3">
+</div>
+
+<!-- Registry links -->
+<div class="w3-container w3-padding-64 w3-pale-red" id="registry">
+    <div class="w3-content center-flex">
+        <h1 class="w3-center w3-text-grey"><b>Wedding Registry</b></h1>
+        <p><a href="https://github.com/tashoecraft/hershcraft.github.io.git">Some things we might need...</i></a></p><br>
+    </div>
+</div>
+
+<!-- RSVP section
+<div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide" id="rsvp">
+  <h1>HOPE YOU CAN MAKE IT!</h1>
+  <p class="w3-large">Kindly Respond By January, 2020</p>
+  <p class="w3-xlarge">
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">RSVP</button>
+  </p>
+</div> -->
+
+<!-- RSVP modal
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
+    <div class="w3-container w3-white w3-center">
+      <h1 class="w3-wide">CAN YOU COME?</h1>
+      <p>We really hope you can make it.</p>
+      <form>
+        <input class="w3-input w3-border" type="text" placeholder="Name(s)" name="name">
+      </form>
+      <p><i>Sincerely, Melanie & Austin</i></p>
+      <div class="w3-row">
+        <div class="w3-half">
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-green">Going</button>
+        </div>
+        <div class="w3-half">
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-red">Can't come</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+    <p>Built by Melanie and Austin, mostly Melanie </p>
+</footer>
+
+<script>
+	var countDownDate = new Date("Sept 12, 2020 00:00:00").getTime();
+
+	var x = setInterval(function() {
+
+		var now = new Date().getTime();
+
+		var distance = countDownDate - now;
+
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+			+ minutes + "m " + seconds + "s ";
+
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo").innerHTML = "THEY'RE MARRIED!";
+		}
+	}, 1000);
+	///https://www.maxlaumeister.com/clientside-html-password/
+</script>
+</body>
+</html>
