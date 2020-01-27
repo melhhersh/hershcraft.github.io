@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74e8833a-0629-49ec-b0fc-7813694a1e87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/italy.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/italy.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +73,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572715629464</updated>
-      <workItem from="1572715633390" duration="3542000" />
+      <workItem from="1572715633390" duration="4822000" />
+      <workItem from="1574619317051" duration="7000" />
+      <workItem from="1580085611770" duration="475000" />
     </task>
     <servers />
   </component>
@@ -84,7 +87,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
