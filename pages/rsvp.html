@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="apple-touch-icon" sizes="180x180" href="pics/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="pics/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon-16x16.png">
-    <link rel="manifest" href="pics/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../pics/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../pics/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../pics/favicon-16x16.png">
+    <link rel="manifest" href="../pics/site.webmanifest">
     <style>
         body,h1,h2{font-family: "Raleway", sans-serif}
         body, html {height: 100%}
@@ -65,9 +65,69 @@
             justify-content: center;
             align-items: center;
         }
+
+
+        label {
+          display: flex;
+          flex-direction: column;
+          max-width: 200px;
+        }
+
+        #wedding {
+          display: flex;
+          justify-content: center;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        #upload-section {
+          display: flex;
+          justify-content: space-between
+        }
+
+        .names {
+          display: flex;
+          justify-content: space-between;
+
+        }
+
+        .names > label {
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
+
+        .upload-label {
+          max-width: 450px;
+          align-items: center;
+        }
+
+        #upload-section {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        #captcha-section {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .captcha-label {
+          max-width: 450px;
+          align-items: center;
+
+        }
+
+        .captcha-input {
+          width: 300px;
+        }
     </style>
 </head>
-<body>
+<body class="pagecontainer">
 
 <!-- Header / Home-->
 <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
@@ -87,27 +147,56 @@
         <!-- <a href="#rsvp" style="width:20%" class="w3-bar-item w3-button w3-hover-black">RSVP</a> -->
     </div>
 </div>
-
-<!-- About / Melanie And Austin -->
-<div class="w3-container w3-padding-64 w3-pale-red" id="us">
-</div>
-
-<!-- Background photo -->
-<div class="w3-display-container w3-grayscale-min bgimg2">
-</div>
-
 <!-- Wedding information -->
 <div class="w3-container w3-padding-64 w3-pale-red w3-center" id="wedding">
+  <form method="POST" id="myForm" onsubmit="return false">
+    <div class="names">
+      <label>
+        First Name
+        <input id="firstname" name="first name" type="text" placeholder="first name"/>
+      </label>
+      <label>
+        Last Name
+        <input name="last name" id="lastname" type="text" placeholder="last name"/>
+      </label>      
+    </div>      
+      <label>
+        Email
+        <input name="email" id="email" type="email" placeholder="email"/>
+      </label>    
+      <label>
+        Attending?
+        <input name="attending" id="attending" type="checkbox" placeholder="number"/>
+      </label>   
+      <label>
+        How many are attending?
+        <input name="how many are attending" id="number" min="0" type="number" placeholder="Number Attending"/>
+      </label>  
+
+      <div id="upload-section">
+        <label class="upload-label">
+          If attending please upload a picture of each person's vaccination card. A copy of the vaccination card
+          must be provided at least 1 month prior to the date of the wedding in order to attend. 
+          <input type="file" id="files" multiple />
+        </label>
+        <p id="uploading"></p>
+        <progress value="0" max="100" id="progress"></progress>
+      </div>
+
+      <div id="captcha-section">
+          <label class="captcha-label">
+            Bot Detection: Please enter the first 4 letters of Melanie's last name (Hershman) with the last 4 letters of Austin's last name (Shoecraft)
+            <input class="captcha-input" id="captcha" name="captcha" type="text" placeholder="Enter the puzzle to prove you're human"/>
+          </label>
+
+      </div>
+
+
+      <button type="submit">Submit</button>
+  </form>
+
 </div>
 
-<!-- Registry links -->
-<div class="w3-container w3-padding-64 w3-pale-red" id="registry">
-    <div class="w3-content center-flex">
-        <h1 class="w3-center w3-text-grey"><b>Wedding Registry</b></h1>
-	    <h3>testing 123 </h3>
-<!--         <p><a href="https://www.myregistry.com/wedding-registry/Austin-Shoecraft-and-Melanie-Hershman-North-Salem-NY/2057541">Some things we might need... </i></a></p><br> -->
-    </div>
-</div>
 
 
 <!-- Footer -->
@@ -115,7 +204,125 @@
     <p>Built by Melanie and Austin, mostly Melanie </p>
 </footer>
 
+<noscript>
+  <style type="text/css">
+      .pagecontainer {display:none;}
+  </style>
+  <div class="noscriptmsg">
+    F off Calvin, just enable javascript and be a good boy
+  </div>
+  
+</noscript>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app-check.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>       
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+  var files = [];
+  document.getElementById("files").addEventListener("change", function(e) {
+    files = e.target.files;
+  });
 </script>
-</body>
+
+  <script>
+  // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDcSkP6hDo8VOxYt02o5xg8dSbO0wzJCAI",
+      authDomain: "hershcraft-34b44.firebaseapp.com",
+      databaseURL: "https://hershcraft-34b44-default-rtdb.firebaseio.com",
+      projectId: "hershcraft-34b44",
+      storageBucket: "hershcraft-34b44.appspot.com",
+      messagingSenderId: "609173564035",
+      appId: "1:609173564035:web:bd99f080945ff953b189b6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var database = firebase.database();
+    
+    var form = document.getElementById("myForm");
+    function handleForm(event) { event.preventDefault(); } 
+    form.addEventListener('submit', writeUserData);
+
+
+    function writeUserData(event) {
+      event.preventDefault();  
+      const firstName = document.getElementById('firstname').value;
+      const lastName = document.getElementById('lastname').value;
+      const email = document.getElementById('email').value;
+      const number = document.getElementById('number').value;
+      const attending = document.getElementById('attending').value === 'on';
+      const captcha = document.getElementById('captcha').value;
+
+      if (!firstName || !lastName || !email || !captcha) {
+        alert('Please enter the required fields');
+        return;
+      }
+
+
+      if (captcha.toLowerCase() !== 'hershcraft') {
+        alert('Come on, the captcha is not that hard, try again. No spaces, just one word');
+        return;
+      }
+      
+    firebase.database().ref(`rsvp/${firstName}${lastName}`).set({
+        firstName,
+        lastName,
+        email,
+        attending,
+        number
+      });
+      if (files.length != 0) {
+
+      //Loops through all the selected files
+      for (let i = 0; i < files.length; i++) {
+
+        //create a storage reference
+        var storage = firebase.storage().ref(`${firstName}_${lastName}_${files[i].name}`);
+
+        //upload file
+        var upload = storage.put(files[i]);
+
+        //update progress bar
+        upload.on(
+          "state_changed",
+          function progress(snapshot) {
+            var percentage =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            document.getElementById("progress").value = percentage;
+          },
+
+          function error() {
+            alert(`error uploading file: ${files[i].name}`);
+          },
+          () => complete()
+        );
+      }
+
+    } else {
+      complete();
+    }
+
+    function complete() {
+            document.getElementById('firstname').value = '';
+            document.getElementById('lastname').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('number').value = '';
+            document.getElementById('attending').checked = false;
+            document.getElementById("files").value = ''
+            files = [];
+            window.location.href = `${window.location.hostname}/pages/success.html`;
+          }
+  }
+
+</script>
+
+  </body>
 </html>
- 
