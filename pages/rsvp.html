@@ -142,7 +142,7 @@
     <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
         <a href="#home" style="width:25%" class="w3-bar-item w3-button">Home</a>
         <a href="#us" style="width:25%" class="w3-bar-item w3-button">Our Story</a>
-        <a href="#wedding" style="width:25%" class="w3-bar-item w3-button">Wedding</a>
+        <a href="/pages/rsvp.html" style="width:25%" class="w3-bar-item w3-button">RSVP</a>
         <a href="#registry" style="width:25%" class="w3-bar-item w3-button">Registry</a>
         <!-- <a href="#rsvp" style="width:20%" class="w3-bar-item w3-button w3-hover-black">RSVP</a> -->
     </div>
@@ -153,11 +153,11 @@
     <div class="names">
       <label>
         First Name
-        <input id="firstname" name="first name" type="text" placeholder="first name"/>
+        <input id="firstname" maxlength="100" name="first name" type="text" placeholder="first name"/>
       </label>
       <label>
         Last Name
-        <input name="last name" id="lastname" type="text" placeholder="last name"/>
+        <input name="last name" maxlength="100" id="lastname" type="text" placeholder="last name"/>
       </label>      
     </div>      
       <label>
@@ -166,11 +166,14 @@
       </label>    
       <label>
         Attending?
-        <input name="attending" id="attending" type="checkbox" placeholder="number"/>
+        <select  name="attending" id="attending"  placeholder="number" id="cars">
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
       </label>   
       <label>
         How many are attending?
-        <input name="how many are attending" id="number" min="0" type="number" placeholder="Number Attending"/>
+        <input name="how many are attending" id="number" min="0" max="10" type="number" placeholder="Number Attending"/>
       </label>  
 
       <div id="upload-section">
@@ -258,7 +261,7 @@
       const lastName = document.getElementById('lastname').value;
       const email = document.getElementById('email').value;
       const number = document.getElementById('number').value;
-      const attending = document.getElementById('attending').value === 'on';
+      const attending = document.getElementById('attending').value === 'yes';
       const captcha = document.getElementById('captcha').value;
 
       if (!firstName || !lastName || !email || !captcha) {
@@ -271,7 +274,7 @@
         alert('Come on, the captcha is not that hard, try again. No spaces, just one word');
         return;
       }
-      
+      debugger;
     firebase.database().ref(`rsvp/${firstName}${lastName}`).set({
         firstName,
         lastName,
@@ -280,31 +283,34 @@
         number
       });
       if (files.length != 0) {
+        let maxNumberOfFiles = files.length;
+        if (number < files.length && iles.length > 10) {
+          maxNumberOfFiles = number;
+        }
+        //Loops through all the selected files
+        for (let i = 0; i < maxNumberOfFiles; i++) {
 
-      //Loops through all the selected files
-      for (let i = 0; i < files.length; i++) {
+          //create a storage reference
+          var storage = firebase.storage().ref(`${firstName}_${lastName}_${files[i].name}`);
 
-        //create a storage reference
-        var storage = firebase.storage().ref(`${firstName}_${lastName}_${files[i].name}`);
+          //upload file
+          var upload = storage.put(files[i]);
 
-        //upload file
-        var upload = storage.put(files[i]);
+          //update progress bar
+          upload.on(
+            "state_changed",
+            function progress(snapshot) {
+              var percentage =
+                (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              document.getElementById("progress").value = percentage;
+            },
 
-        //update progress bar
-        upload.on(
-          "state_changed",
-          function progress(snapshot) {
-            var percentage =
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            document.getElementById("progress").value = percentage;
-          },
-
-          function error() {
-            alert(`error uploading file: ${files[i].name}`);
-          },
-          () => complete()
-        );
-      }
+            function error() {
+              alert(`error uploading file: ${files[i].name}`);
+            },
+            () => complete()
+          );
+        }
 
     } else {
       complete();
@@ -318,7 +324,7 @@
             document.getElementById('attending').checked = false;
             document.getElementById("files").value = ''
             files = [];
-            window.location.href = `${window.location.hostname}/pages/success.html`;
+            window.location.href = `/pages/success.html`;
           }
   }
 
