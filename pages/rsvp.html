@@ -274,14 +274,19 @@
         alert('Come on, the captcha is not that hard, try again. No spaces, just one word');
         return;
       }
-      debugger;
-    firebase.database().ref(`rsvp/${firstName}${lastName}`).set({
-        firstName,
-        lastName,
-        email,
-        attending,
-        number
-      });
+      try {
+        firebase.database().ref(`rsvp/${firstName}${lastName}`).set({
+          firstName,
+          lastName,
+          email,
+          attending,
+          number
+        });
+      } catch (err) {
+        alert('There was an error uploading your information');
+      }
+
+
       if (files.length != 0) {
         let maxNumberOfFiles = files.length;
         if (number < files.length && iles.length > 10) {
