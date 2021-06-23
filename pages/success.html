@@ -59,69 +59,18 @@
     </style>
 
     <style>
-        .center-flex {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+       .gif-container {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+       }
 
-
-        label {
-          display: flex;
-          flex-direction: column;
-          max-width: 200px;
-        }
-
-        #wedding {
-          display: flex;
-          justify-content: center;
-        }
-
-        form {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        #upload-section {
-          display: flex;
-          justify-content: space-between
-        }
-
-        .names {
-          display: flex;
-          justify-content: space-between;
-
-        }
-
-        .names > label {
-          margin-left: 10px;
-          margin-right: 10px;
-          margin-bottom: 10px;
-        }
-
-        .upload-label {
-          max-width: 450px;
-          align-items: center;
-        }
-
-        #upload-section {
-          flex-direction: column;
-          align-items: center;
-        }
+       .gif {
+        display: flex;
+       }
     </style>
 </head>
 <body class="pagecontainer">
-
-<!-- Header / Home-->
-<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
-    <div class="w3-display-middle w3-text-white w3-center firstImg">
-        <h1 style="font-size: 4vw">RSVP for Melanie & Austin's Wedding</h1>
-        <p id="demo" style="font-size: 1vw"></p>
-    </div>
-</header>
-
 <!-- Navbar (sticky bottom) -->
 <div class="w3-bottom w3-hide-small">
     <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
@@ -129,13 +78,15 @@
         <a href="#us" style="width:25%" class="w3-bar-item w3-button">Our Story</a>
         <a href="/pages/rsvp.html" style="width:25%" class="w3-bar-item w3-button">RSVP</a>
         <a href="#registry" style="width:25%" class="w3-bar-item w3-button">Registry</a>
-        <!-- <a href="#rsvp" style="width:20%" class="w3-bar-item w3-button w3-hover-black">RSVP</a> -->
     </div>
 </div>
 <!-- Wedding information -->
-<div class="w3-container w3-padding-64 w3-pale-red w3-center" id="wedding">
+<div class="w3-container w3-padding-64 w3-pale-red w3-center gif-container" id="wedding">
     <p>Your information has been successfully uploaded. Thank you</p>
-    <div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/pa37AAGzKXoek" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/dancing-fresh-prince-of-bel-air-carlton-pa37AAGzKXoek"></a></p>
+    <div class="gif" style="width:100%;height:0;padding-bottom:75%;position:relative;">
+        <iframe src="https://giphy.com/embed/pa37AAGzKXoek" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen>
+        </iframe>
+    </div><p><a href="https://giphy.com/gifs/dancing-fresh-prince-of-bel-air-carlton-pa37AAGzKXoek"></a></p>
 </div>
 
 
