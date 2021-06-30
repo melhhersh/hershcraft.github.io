@@ -273,8 +273,9 @@
         alert('Come on, the captcha is not that hard, try again. No spaces, just one word');
         return;
       }
+      let reference;
       try {
-        firebase.database().ref(`rsvp/${firstName}${lastName}`).set({
+        reference = firebase.database().ref(`rsvp/${firstName}${lastName}`).set({
           firstName,
           lastName,
           email,
@@ -317,7 +318,11 @@
         }
 
     } else {
-      complete();
+      // reference.put()
+          setTimeout(() => {
+              complete();
+
+          }, 500)
     }
 
     function complete() {
